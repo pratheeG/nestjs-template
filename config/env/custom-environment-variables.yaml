@@ -1,0 +1,5 @@
+app:
+  node_env: NODE_ENV
+
+feature_flags:
+  enable_emit_lifecycle_event: EMIT_LIFECYCLE_EVENT

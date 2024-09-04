@@ -1,0 +1,12 @@
+app:
+  name: Josys-User-Profile-Handler
+  host: localhost
+  port: 3000
+  node_env: development
+  queue_url: amqp://localhost:5672
+  employee:
+    number_of_concurrent_records: 5
+  department:
+    number_of_concurrent_records: 5
+
+log_level: info

@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run lint --fix $(git diff --name-only --diff-filter=d HEAD | grep -E '{src,apps,libs,test}/**/*.ts'  | xargs) && npm test

@@ -1,0 +1,3 @@
+life_cycle_kafka:
+  groupId: 'life_cycle_groupId'
+  # fromBeginning: false
