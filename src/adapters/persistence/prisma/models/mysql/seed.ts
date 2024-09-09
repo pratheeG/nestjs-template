@@ -29,6 +29,7 @@ class SeederService {
         uuid: faker.string.uuid(),
         email: faker.internet.email(),
         password: await this.hash.encryptPassword(faker.internet.password()),
+        user_name: faker.string.alpha(),
       },
     });
   }
