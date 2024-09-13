@@ -1,4 +1,5 @@
 import { ValidationError } from 'class-validator';
+
 import { ValidationException } from './validation-exception';
 
 const generateErrorCode = (actualCode) => {

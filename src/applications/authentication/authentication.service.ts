@@ -1,12 +1,9 @@
-import {
-  Context,
-  TokenParams,
-} from 'src/core/interfaces/token-params.interface';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-
-import { Hash } from '../../common/hash';
 import { JwtService } from '@nestjs/jwt';
 import { TempRepository } from 'src/adapters/persistence/repositories/temp.repository';
+import { Context, TokenParams } from 'src/core/interfaces/token-params.interface';
+
+import { Hash } from '../../common/hash';
 
 @Injectable()
 export class AuthenticationService {
@@ -18,8 +15,7 @@ export class AuthenticationService {
 
   async validateUser(email: string, password: string): Promise<TokenParams> {
     const user = await this.repo.findFirst({ where: { email: email } });
-    if (!user)
-      throw new UnauthorizedException({ error_code: 'invalid_credentials' });
+    if (!user) throw new UnauthorizedException({ error_code: 'invalid_credentials' });
 
     const { password: encryptedPassword, id, uuid } = user;
 
@@ -29,8 +25,7 @@ export class AuthenticationService {
       isInvalidCreds = true;
     }
 
-    if (isInvalidCreds)
-      throw new UnauthorizedException({ error_code: 'invalid_credentials' });
+    if (isInvalidCreds) throw new UnauthorizedException({ error_code: 'invalid_credentials' });
 
     return {
       context: Context.login,

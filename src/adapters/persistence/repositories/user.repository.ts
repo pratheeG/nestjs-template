@@ -1,11 +1,11 @@
 import { BaseRepository } from './index';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma/service/prisma.service';
-import { temp } from '@prisma/client';
+import { User } from '@prisma/client';
 
 @Injectable()
-export class TempRepository extends BaseRepository<temp> {
+export class TempRepository extends BaseRepository<User> {
   constructor(private readonly prismaService: PrismaService) {
-    super(prismaService.temp, prismaService);
+    super(prismaService.user, prismaService);
   }
 }

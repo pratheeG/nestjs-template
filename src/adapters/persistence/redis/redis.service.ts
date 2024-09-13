@@ -7,8 +7,7 @@ export class RedisService {
   constructor(@Inject(CACHE_MANAGER) private readonly cacheManager: Cache) {}
 
   get = (key: string) => this.cacheManager.get(key);
-  set = (key: string, value: any, ttl?: number) =>
-    this.cacheManager.set(key, value, ttl);
+  set = (key: string, value: any, ttl?: number) => this.cacheManager.set(key, value, ttl);
   del = (key: string) => this.cacheManager.del(key);
 
   async keyExists(key: string): Promise<boolean> {

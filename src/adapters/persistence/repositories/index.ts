@@ -24,19 +24,11 @@ export class BaseRepository<T> {
     return this._model.findMany(params);
   }
 
-  async findUnique(params: {
-    where: any;
-    select?: any;
-    include?: any;
-  }): Promise<T> {
+  async findUnique(params: { where: any; select?: any; include?: any }): Promise<T> {
     return await this._model.findUnique(params);
   }
 
-  async findFirst(params: {
-    select?: any;
-    where: any;
-    orderBy?: any[];
-  }): Promise<T> {
+  async findFirst(params: { select?: any; where: any; orderBy?: any[] }): Promise<T> {
     return await this._model.findFirst(params);
   }
 
@@ -73,15 +65,7 @@ export class BaseRepository<T> {
     count?: boolean;
     where?: any;
   }): Promise<any> {
-    const {
-      skip = undefined,
-      take = undefined,
-      orderBy,
-      having,
-      by,
-      count = false,
-      where,
-    } = params;
+    const { skip = undefined, take = undefined, orderBy, having, by, count = false, where } = params;
     return await this._model.groupBy({
       by,
       where,

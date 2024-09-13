@@ -5,7 +5,7 @@ describe('Configuration', () => {
 
   describe('Check Application valibale Configuration', () => {
     it('should return Port', () => {
-      expect(config.app.port).toBe(8080);
+      expect(config.app.port).toBe(3000);
     });
     it('should return NODE_ENV', () => {
       expect(config.app.node_env).toBe('test');

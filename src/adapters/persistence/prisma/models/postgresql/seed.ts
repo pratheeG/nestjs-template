@@ -13,7 +13,7 @@ class SeederService {
   }
 
   async clearData() {
-    await this.prisma.temp.deleteMany({});
+    await this.prisma.user.deleteMany({});
 
     await this.resetAutoIncrement('temp');
   }
@@ -24,7 +24,7 @@ class SeederService {
     );
   }
   async seedTempTable() {
-    await this.prisma.temp.create({
+    await this.prisma.user.create({
       data: {
         uuid: faker.string.uuid(),
         email: faker.internet.email(),

@@ -1,11 +1,11 @@
-import { Global, Module } from '@nestjs/common';
-
 import { CacheModule } from '@nestjs/cache-manager';
+import { Global, Module } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import type { RedisClientOptions } from 'redis';
-import { RedisService } from './redis.service';
-import { redisDefaultTtl } from './../../../utility/constants';
 import { redisStore } from 'cache-manager-redis-store';
+import type { RedisClientOptions } from 'redis';
+
+import { redisDefaultTtl } from './../../../utility/constants';
+import { RedisService } from './redis.service';
 
 @Global()
 @Module({
