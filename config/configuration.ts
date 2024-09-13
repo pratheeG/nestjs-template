@@ -1,8 +1,7 @@
-process.env.NODE_CONFIG_DIR = './config/env';
+process.env['NODE_CONFIG_DIR'] = './config/env';
 
-import * as config from 'config';
-
+const config = require('config');
 export const configuration = () => ({
-  ...process.env,
   ...config,
+  ...process.env,
 });

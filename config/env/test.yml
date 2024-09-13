@@ -3,15 +3,3 @@ app:
     host: localhost
     port: 3000
     node_env: test
-
-
-error:
-    sentry:
-        enable: true
-        log_level: error
-        traces_sample_rate: 1.0
-        debug_mode: false
-
-http:
-    timeout: 5000
-    max_redirects: 5
