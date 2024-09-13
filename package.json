@@ -18,7 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "seed": "ts-node src/adapters/persistence/prisma/models/mysql/seed.ts"
+    "seed": "ts-node src/adapters/persistence/prisma/models/mysql/seed.ts",
+    "test:integration": "jest --verbose --config ./test/jest-integration.json"
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
